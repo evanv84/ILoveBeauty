@@ -47,7 +47,7 @@
                                 СКИДКА!
                             </p>
                             <p>Старая цена <span>1900 руб.</span> Цена со скидкой <span class="pink">1200 руб.</span></p>
-                            <form action="send.php">
+                            <form action="send.php" method="POST">
                                 <input type="phone" name="phone" placeholder="Ваш номер телефона">
                                 <button class="btn" type="submit">Купить со скидкой</button>
                             </form>
@@ -142,7 +142,7 @@
                 <div class="text">
                     <p class="title"><em>Закажи кисть со скидкой прямо сейчас!</em></p>
                     <p>Цена со скидкой <em>1200 руб.</em></p>
-                    <form action="send.php">
+                    <form action="send.php" method="POST">
                         <input type="text" name="name" placeholder="Ваше имя">
                         <input type="phone" name="phone" placeholder="Ваш номер телефона">
                         <button class="btn" type="submit">Купить со скидкой</button>
@@ -230,7 +230,7 @@
                 <h2>Супер акция!</h2>
                 <p class="text-1">При покупке от 6 до 10 шт. Цена <span>700 руб. за шт.</span></p>
                 <p class="text-2">При покупке от 2 до 5 шт. Цена <span>900 руб за шт.</span></p>
-                <form action="send.php">
+                <form action="send.php" method="POST">
                     <input type="text" name="name" placeholder="Ваше имя">
                     <input type="phone" name="phone" placeholder="Ваш номер телефона">
                     <button class="btn" type="submit">Купить по акции</button>
@@ -268,6 +268,35 @@
                 </div>
             </div>
         </footer>
+
+        <div class="remodal" data-remodal-id="order">
+            <button data-remodal-action="close" class="remodal-close">
+                <span></span>
+                <span></span>
+            </button>
+            <div class="text-modal">
+                <h4>
+                    Заполните форму и наш менеджер свяжется с Вами в ближайшее время для уточнения деталей заказа.
+                </h4>
+            </div>
+           <div class="form-modal">
+                <form action="send.php" method="POST">
+                   <div class="input">
+                       <input type="text" name="name" placeholder="Ваше имя" required>
+                   </div>
+                   <div class="input">
+                       <input type="phone" name="phone" placeholder="Ваш номер телефона" required>
+                   </div>
+                   <div class="button">
+                       <button type="submit" class="btn">Отправить заявку</button>
+                   </div>
+               </form>
+           </div>
+           <div class="law">
+                <p>Ваши данные будут использованы только для связи с Вами и не будут переданы третьим лицам на основании ФЗ РФ №152 &quot;О персональных данных&quot;.</p>
+           </div>
+            </div>
+        </div>
 
     <!-- jQuery --> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
