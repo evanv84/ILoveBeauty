@@ -1,0 +1,790 @@
+@import "susy";
+@import "breakpoint";
+
+//variables
+@import "variables";
+
+//mixins
+@import "mixins";
+
+//partials
+@import "buttons";
+
+//fonts
+@import "fonts";
+
+//Susy settings
+$susy: (
+  columns: 12,
+  gutter-position: inside,
+  gutters: 0,
+  math: fluid,
+  output: float,
+);
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+*, :after, :before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	overflow-x: hidden;
+}
+
+section:before {
+	clear: both;
+}
+
+section {
+  position: relative;
+}
+
+a {
+  text-decoration: underline;
+  color: $gold;
+}
+
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul>li {
+  list-style: none;
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+input {
+  padding: 1.01rem 1rem;
+  margin-right: 0.5rem;
+  @include breakpoint($tablet) {
+    margin-bottom: 1rem;
+  }
+}
+
+span.pink {
+  text-decoration: none;
+  color: $gold;
+  font-weight: 600;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.container {
+  @include container(1200px);
+  
+  @include breakpoint($tablet) {
+    @include container(100%);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.row {
+  clear: both;
+}
+
+header {
+  height: 740px;
+  background: url(../img/header-bg.jpg) center center no-repeat;
+  @include bgs(cover);
+  @include breakpoint($tablet) {
+    background: lighten($black, 92);
+    height: auto;
+    padding-bottom: 40px;
+  }
+  
+  .container {
+    .top {
+      .logo {
+        @include span(3 first);
+        @include breakpoint($tablet) {
+          @include span(12);
+        }
+        img {
+          max-width: 250px;
+          margin-top: 1rem;
+        }
+      }
+      .contacts {
+        @include span(3 first);
+        padding-top: 1rem;
+        @include breakpoint($tablet) {
+          @include span(12);
+        }
+        p {
+          margin-bottom: 0.5rem;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+
+    .main {
+      clear: both;
+      padding-top: 4rem;
+      
+      .offer {
+        @include span(6 first);
+        @include breakpoint($tablet) {
+          @include span(12);
+        }
+        
+        h1 {
+          color: $gold;
+          font-weight: 600;
+          @include breakpoint($tablet) {
+            font-size: 1.5rem;
+          }
+        }
+
+        h3 {
+          font-style: italic;
+        }
+
+
+        i {
+          color: $gold;
+        }
+      }
+
+      .deal {
+        @include span(6 last);
+        position: relative;
+        padding-top: 200px;
+        text-align: center;
+        @include breakpoint($tablet) {
+          @include span(12);
+          padding-top: 50px;
+        }
+        
+        .box {
+          padding: 1.5rem;
+          background: transparentize($white, 0.5);
+          margin-bottom: 1rem;
+          
+          p {
+            font-style: italic;
+          }
+         
+          .title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-style: italic;
+          }
+
+          span {
+            text-decoration: line-through;
+          }
+
+          .pink {
+            text-decoration: none;
+          }
+
+          form {
+            margin-bottom: 1rem;
+            @include breakpoint($tablet) {
+              input {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#description {
+  padding: 40px 0;
+  
+  .container {
+    
+    .image {
+      @include span(6 first);
+      @include breakpoint($tablet) {
+        @include span(12);
+      }
+      
+      img {
+        display: block;
+        max-width: 80%;
+        margin: auto;
+      }
+    }
+
+    .text {
+      @include span(6 last);
+      @include breakpoint($tablet) {
+        @include span(12);
+      }
+      
+      h2 {
+        display: inline-block;
+        background: lighten($gold, 40);
+        padding: 1rem 2rem;
+        @include breakpoint($tablet) {
+          padding: 1rem;
+        }
+      }
+
+      p {
+        padding-left: 2rem;
+        @include breakpoint($tablet) {
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+#features {
+  padding: 40px 0;
+  background: rgba(230,230,230,1);
+  background: -moz-linear-gradient(45deg, rgba(230,230,230,1) 0%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(230,230,230,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(45deg, rgba(230,230,230,1) 0%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(230,230,230,1) 0%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(230,230,230,1) 0%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(45deg, rgba(230,230,230,1) 0%, rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff', GradientType=1 );
+  
+  .container {
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    img {
+      max-width: 80%;
+      display: block;
+      margin: auto;
+    }
+
+    .title {
+      color: $gold;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding-top: 5rem;
+      @include breakpoint($tablet) {
+       padding-top: 1rem;
+      }
+    }
+
+    .row {
+      padding: 40px 0;
+      @include breakpoint($tablet) {
+        padding: 20px 0;
+      }
+    }
+
+    .col-left {
+      @include span(6 first);
+      @include breakpoint($tablet) {
+        @include span(12);
+      }
+    }
+
+    .col-right {
+      @include span(6 last);
+      @include breakpoint($tablet) {
+        @include span(12);
+      }
+    }
+  }
+}
+
+#action-before {
+  padding: 80px 0;
+  
+  .container {
+    
+    .image {
+      @include span(4 first);
+      @include breakpoint($tablet) {
+        @include span(12);
+      }
+      
+      img {
+        display: block;
+        margin: auto;
+        max-width: 80%;
+      }
+    }
+
+    .text {
+      @include span(8 last);
+      padding-top: 2rem;
+      @include breakpoint($tablet) {
+        @include span(12);
+        padding-top: 1rem;
+      }
+    }
+  }
+}
+
+#action {
+  padding: 80px 0;
+  background: lighten($black, 95);
+  text-align: center;
+  
+  .container {
+    em {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    form {
+      margin-bottom: 2rem;
+      @include breakpoint($tablet) {
+          @include span(12);
+          input {
+            width: 100%;
+          }
+        }
+    }
+
+    .quantity {
+      color: $gold;
+    }
+  }
+}
+
+#reasons {
+  padding: 40px 0;
+  background: url(../img/icons-bg.jpg) center center no-repeat;
+  @include bgs(cover);
+  background-attachment: fixed;
+  
+  .container {
+    color: $white;
+    
+    h2 {
+      text-align: center;
+      
+      span {
+        font-weight: 600;
+        color: $gold;
+      }
+    }
+    
+    .icon {
+      @include span(4 first);
+      text-align: center;
+      @include breakpoint($tablet) {
+        @include span(12);
+      }
+      
+      img {
+        display: block;
+        margin: 2rem auto;
+        max-width: 80%;
+      }
+
+      p {
+        padding: 0 2rem;
+      }
+    }
+  }
+}
+
+#feedback {
+  padding: 40px 0;
+  background: lighten($black, 95);
+  
+  .container {
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .col {
+      @include span(4 first);
+      padding: 0 2rem;
+      @include breakpoint($tablet) {
+        @include span(12);
+        padding: 0;
+        margin-bottom: 2rem;
+      }
+      
+      img {
+        margin-bottom: 2rem;
+      }
+
+      .quote {
+        font-style: italic;
+        
+        i {
+          color: lighten($gold, 40);
+        }
+      }
+    }
+  }
+}
+
+#steps {
+  padding: 40px 0;
+  background: lighten($gold, 50);
+  
+  .container {
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .row {
+      .number {
+        @include span(3 first);
+        text-align: center;
+        padding: 0 2rem;
+        @include breakpoint($tablet) {
+          @include span(12);
+          padding: 0;
+        }
+        
+        h4 {
+          font-style: italic;
+          font-weight: 600;
+          text-align: center;
+          font-size: 2rem;
+          padding-top: 66px;
+        }
+        
+        .num-1 {
+          position: relative;
+          height: 100px;
+          background: url(../img/one-bg.jpg) center bottom no-repeat;
+          @include bgs(contain);   
+        }
+        .num-2 {
+          position: relative;
+          height: 100px;
+          background: url(../img/two-bg.jpg) center bottom no-repeat;
+          @include bgs(contain);   
+        }
+        .num-3 {
+          position: relative;
+          height: 100px;
+          background: url(../img/three-bg.jpg) center bottom no-repeat;
+          @include bgs(contain);   
+        }
+        .num-4 {
+          position: relative;
+          height: 100px;
+          background: url(../img/four-bg.jpg) center bottom no-repeat;
+          @include bgs(contain);   
+        }
+
+        p {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}
+
+#wholesale {
+  padding: 40px 0;
+  
+  .container {
+    padding: 80px 0;
+    background: url(../img/wholesale-1.jpg) left center no-repeat;
+    @include bgs(contain);
+    text-align: center;
+    @include breakpoint($tablet) {
+      background: #FFF;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      font-style: italic;
+    }
+
+    p {
+      font-size: 1.5rem;
+      
+      span {
+        color: $gold;
+      }
+    }
+
+    form {
+      margin-bottom: 2rem;
+      @include breakpoint($tablet) {
+        @include span(12);
+        input {
+          width: 100%;
+        }
+      }
+    }
+
+    .desc {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+#faq {
+  padding: 80px 0;
+  background: url(../img/faq-bg.jpg) center center no-repeat;
+  @include bgs(cover);
+  @include breakpoint($tablet) {
+    background-position: left;
+  }
+  
+  .container {
+    .faq-text {
+      @include span(6 first);
+      @include breakpoint($tablet) {
+        @include span(12);
+      }
+      
+      p {
+        color: lighten($black, 40);
+        em {
+          color: $black;
+          font-size: 1.2rem;
+          margin-bottom: 0;
+          
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 80px 0 20px;
+  background: lighten($black, 7);
+  color: #FFF;
+  
+  .container {
+    
+    .col {
+      @include span(4 first);
+      @include breakpoint($tablet) {
+        @include span(12);
+      }
+      
+      &:nth-child(2), &:nth-child(3) {
+        text-align: center;
+        @include breakpoint($tablet) {
+          text-align: left;
+        }
+      }
+
+      i {
+        font-size: 2rem;
+      }
+
+      img {
+        max-width: 50%;
+      }
+    }
+  }
+}
+
+.remodal {
+  background: url(../img/modal-bg.jpg) center center no-repeat;
+  @include bgs(cover);
+  border-bottom: 3px solid $gold;
+  @include breakpoint($phone) {
+    background-position: left;
+  } 
+
+  .remodal-close {
+    top: -50px;
+    left: 710px;
+    opacity: 0.7;
+    @include tr(0.6s);
+    @include breakpoint($phone) {
+      left: 0;
+      top: 0;
+    }
+
+    &:hover {
+      @include tr(0.6s);
+      @include trnf(rotate(180deg) scale(1.2));
+      @include trnf-o(50% 50%);
+      opacity: 1;
+    }
+  }
+
+  .remodal-close:before {
+    display: none;
+  }
+
+  .remodal-close span:nth-child(1) {
+    position: absolute;
+    top: 16px;
+    left: -2px;
+    height: 2px;
+    width: 40px;
+    background-color: $white;
+    @include trnf(rotate(45deg));
+    @include breakpoint($phone) {
+      background-color: $gold;
+    } 
+  }
+
+  .remodal-close span:nth-child(2) {
+    position: absolute;
+    top: 16px;
+    left: -2px;
+    height: 2px;
+    width: 40px;
+    background-color: $white;
+    @include trnf(rotate(135deg));
+    @include breakpoint($phone) {
+      background-color: $gold;
+    } 
+  }
+
+  .remodal-close:hover span:nth-child(1), .remodal-close:hover span:nth-child(2) {
+    background-color: $gold;
+    @include tr(0.5s);
+  }
+}
+
+.text-modal {
+  max-width: 60%;
+  text-align: left;
+  @include breakpoint($phone) {
+    max-width: 100%;
+  } 
+
+  h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+    margin-top: 0;
+  }
+
+}
+
+.law {
+  max-width: 60%;
+  text-align: left;
+  @include breakpoint($phone) {
+    max-width: 100%;
+  } 
+
+  p {
+    font-weight: 400;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+.form-modal {
+  width: 60%;
+  @include breakpoint($phone) {
+    width: 100%;
+  } 
+  .input {
+    input {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      outline-color: $gold;
+      border-left: none;
+      border-top: none;
+      border-right: none;
+      border-bottom: 1px solid $gold;
+      background-color: transparent;
+      color: darken($white, 10);
+      text-transform: uppercase;
+    }
+    ::-webkit-input-placeholder {
+       color: darken($white, 10);
+    }
+    :-moz-placeholder { /* Firefox 18- */
+       color: darken($white, 10);  
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: darken($white, 10);  
+    }
+    :-ms-input-placeholder {  
+       color: darken($white, 10);  
+    }
+  } 
+
+  .btn {
+    width: 100%;
+    background-color: $gold;
+    cursor: pointer;
+    border: 1px solid $gold;
+    color: #fff;
+  }
+
+  
+}
+
