@@ -530,25 +530,25 @@ header {
         .num-1 {
           position: relative;
           height: 100px;
-          background: url(../img/one-bg.jpg) center bottom no-repeat;
+          background: url(../img/one-bg.png) center bottom no-repeat;
           @include bgs(contain);   
         }
         .num-2 {
           position: relative;
           height: 100px;
-          background: url(../img/two-bg.jpg) center bottom no-repeat;
+          background: url(../img/two-bg.png) center bottom no-repeat;
           @include bgs(contain);   
         }
         .num-3 {
           position: relative;
           height: 100px;
-          background: url(../img/three-bg.jpg) center bottom no-repeat;
+          background: url(../img/three-bg.png) center bottom no-repeat;
           @include bgs(contain);   
         }
         .num-4 {
           position: relative;
           height: 100px;
-          background: url(../img/four-bg.jpg) center bottom no-repeat;
+          background: url(../img/four-bg.png) center bottom no-repeat;
           @include bgs(contain);   
         }
 
